@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://collatz.gd" type="Script" id=1]
+[ext_resource path="res://bit.svg" type="Texture" id=2]
+[ext_resource path="res://bit.tscn" type="PackedScene" id=3]
+
+[sub_resource type="PlaneShape" id=1]
+
+[node name="adder" type="Node2D"]
+script = ExtResource( 1 )
+sprite = NodePath("../adder/bit")
+resource = SubResource( 1 )
+
+[node name="and" type="Sprite" parent="."]
+position = Vector2( 52, 130 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+hframes = 3
+
+[node name="bit" parent="." instance=ExtResource( 3 )]
+
+[node name="bit2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 52, 130 )
